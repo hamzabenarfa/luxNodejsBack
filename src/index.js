@@ -20,7 +20,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
-app.use("/destination", destinationRoute);
+app.use("/", destinationRoute);
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
