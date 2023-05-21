@@ -19,7 +19,7 @@ mongoose
   .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => console.log(err));
 
-app.use("/destination", destinationRoute);
+app.use("/api/destination", destinationRoute);
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
