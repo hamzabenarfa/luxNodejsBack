@@ -10,7 +10,7 @@ const port = process.env.PORT || 4000;
 
 const app = express();
 dotenv.config();
-app.use(cors());
+app.use(cors('*'));
 app.use(express.json());
 url ="mongodb+srv://hamaz:hamza@luxuriatravel.5pw3i3t.mongodb.net/lux?retryWrites=true&w=majority"
 console.log(process.env.url)
