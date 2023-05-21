@@ -12,11 +12,11 @@ const app = express();
 dotenv.config();
 app.use(cors());
 app.use(express.json());
-
+url ="mongodb+srv://hamaz:hamza@luxuriatravel.5pw3i3t.mongodb.net/lux?retryWrites=true&w=majority"
 console.log(process.env.url)
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(process.env.url, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
