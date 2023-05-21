@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
 const destinationRoute = require("./routes/destination");
+const destRoute = require("./routes/destination");
 
 
 const port = process.env.PORT || 4000;
@@ -21,6 +22,7 @@ mongoose
 
 
 app.use("/", destinationRoute);
+app.use("/dest", destRoute);
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
