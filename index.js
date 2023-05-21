@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
-const destinationRoute = require("./routes/destination");
+const destinationRoute = require("./src/routes/destination");
 
 
 const port = process.env.PORT || 4000;
@@ -17,10 +17,9 @@ console.log(process.env.url)
 mongoose.set("strictQuery", false);
 mongoose
   .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
-app.use("/", destinationRoute);
+app.use("/destination", destinationRoute);
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
